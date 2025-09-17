@@ -1,0 +1,100 @@
+/* CSS Variables */
+:root{
+  --bg:#0b1020;
+  --card:#111836;
+  --text:#eef2ff;
+  --muted:#9aa3b2;
+  --brand:#7c5cff;
+  --brand-2:#31c48d;
+  --danger:#ef4444;
+  --ok:#22c55e;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--text);
+  background: linear-gradient(180deg, #0b1020 0%, #0b1020 40%, #0f1430 100%);
+}
+
+.container{max-width:1100px;margin-inline:auto;padding:0 16px}
+
+.site-header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(8px);
+  background: rgba(11,16,32,0.7);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+/* Navbar */
+.navbar{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.brand{color:#fff;text-decoration:none;font-weight:700;letter-spacing:0.5px}
+.menu-toggle{display:none;border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--text);padding:6px 10px;border-radius:10px;font-size:20px;cursor:pointer}
+.nav-links{list-style:none;display:flex;gap:20px;margin:0;padding:0}
+.nav-links a{color:var(--text);text-decoration:none;opacity:.9}
+.nav-links a:hover{opacity:1;color:var(--brand-2)}
+
+@media (max-width: 760px){
+  .menu-toggle{display:block}
+  .nav-links{position:absolute;right:16px;top:70px;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:12px 16px;flex-direction:column;gap:12px;display:none;min-width:200px}
+  .nav-links.open{display:flex}
+}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:36px;padding:56px 0}
+.hero h1{font-size:clamp(28px,3.2vw,44px);line-height:1.1;margin:0 0 12px}
+.hero p{color:var(--muted);margin:0 0 20px}
+.cta-btn{background:var(--brand);color:white;border:none;padding:12px 18px;border-radius:12px;font-weight:600;cursor:pointer}
+.cta-btn:hover{filter:brightness(1.1)}
+.hero-illust{width:100%;border-radius:16px;border:1px solid rgba(255,255,255,.06)}
+
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr}
+  .hero-illust{order:-1}
+}
+
+/* Sections */
+.section{padding:40px 0}
+.section h2{margin-bottom:16px}
+
+/* Grid utilities */
+.grid{display:grid;gap:16px}
+.projects{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.gallery{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+
+/* Cards */
+.card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:16px; padding:14px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{transform: translateY(-2px); box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.08)}
+.card h3{margin:10px 0 6px}
+.card p{color:var(--muted);margin:0}
+
+/* Gallery */
+.gallery img{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.06);cursor:pointer}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal img{max-width:90vw;max-height:80vh;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:#000}
+.modal-close{position:absolute;top:16px;right:16px;font-size:28px;border:none;background:rgba(255,255,255,.1);color:white;border-radius:12px;padding:8px 12px;cursor:pointer}
+
+/* Form */
+form{max-width:640px}
+.form-field{display:flex;flex-direction:column;margin-bottom:14px}
+input, textarea{
+  width:100%; padding:12px 14px; border-radius:12px;
+  border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); color:var(--text);
+}
+input:focus, textarea:focus{outline:2px solid var(--brand); border-color:transparent}
+.btn-primary{background:var(--brand-2);color:#02120b;border:none;padding:12px 16px;border-radius:12px;font-weight:700;cursor:pointer}
+.error{color:var(--danger);min-height:18px}
+.status{margin-top:10px;font-weight:600}
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(255,255,255,.06);padding:18px 0;color:var(--muted);text-align:center}
