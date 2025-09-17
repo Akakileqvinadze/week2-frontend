@@ -1,3 +1,7 @@
+
+საიტს შეგიძლიათ ეწვიოთ აქ  https://akakileqvinadze.github.io/week2-frontend/
+
+
 კვირა 2 – Frontend (HTML/CSS + JavaScript)
 ეს რეპო შეიცავს მინიმალურ, ცოცხალ Landing Page-ს, რომელიც აკმაყოფილებს „კვირა 2“-ის დავალების მოთხოვნებს.
 შესაძლებლობები
